@@ -4,8 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- link of style sheet  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- link of tailwind css -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <!-- font awsome link -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body>
-    
+<body> 
+    <body>
+
+  <!-- En-tête du site -->
+  <header class=" ">
+    <h1 class=""><i class="fa-solid fa-bus-side"></i>Bus<span>Direct</span></h1>
+    <!-- Navigation -->
+     <nav class="">
+        
+        <ul class="menu ">
+            <li>Reservation</li>
+            <li>Tickets</li>
+            <li><i class="fa-solid fa-circle-user" ></i></li>
+        </ul>
+     </nav>
+  </header>
+
+  <!-- Informations du trajet -->
+  <section class="section-Head ">
+    <div class="trajet">
+        <h3 class="">trajet</h3>
+        <h1 class="">Safi → Marrakech</h1>
+    </div>
+    <div class="details-trajet ">
+      <p>Date : 25/10/2026</p>
+      <p>Départ : 08:00</p>
+      <p>Bus : B-1234</p>
+    </div>
+  </section>
+
+  <!-- Contenu principal -->
+ 
+    <section class="section-Infos" >
+        <div class="">tatal Places : 20 </div>
+        <div class="">Nombre Sieges Disponible</div>
+        <div class="">recette totale du trajet</div>
+    </section>
+     <main class="">
+    <!-- Plan des sièges -->
+    <section class="section-principal ">
+      <h2 class="">Plan de la cabine</h2>
+      <!-- Les 20 sièges -->
+       <div class="countainer-Box ">
+        <div class="box1">Seat 1</div>
+        <div class="box1">Seat 2</div>
+        <div class="box1">Seat 3</div>
+        <div class="box1">Seat 4</div>
+        <div class="box1">Seat 5</div>
+        <div class="box1">Seat 6</div>
+        <div class="box1">Seat 7</div>
+        <div class="box1">Seat 8</div>
+        <div class="box1">Seat 9</div>
+        <div class="box1">Seat 10</div>
+        <div class="box1">Seat 11</div>
+        <div class="box1">Seat 12</div>
+        <div class="box1">Seat 13</div>
+        <div class="box1">Seat 14</div>
+        <div class="box1">Seat 15</div>
+        <div class="box1">Seat 16</div>
+        <div class="box1">Seat 17</div>
+        <div class="box1">Seat 18</div>
+        <div class="box1">Seat 19</div>
+        <div class="box1">Seat 20</div>
+     
+       </div>
+
+    </section>
+
+    <!-- Gestion des réservations -->
+    <aside class="bg-gray-500 m-2  p-2 rounded-lg  h-full">
+      <section class="bg-green-700">
+        <h2>Réserver une place</h2>
+        <!-- Formulaire réservation -->
+         <form action="tickets.html">
+            <table>
+                <tr>
+                    <td><label for="nom">Nom Passager<span>*</span></label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="nomComplet" id="nomComplet" placeholder="Ex:Mariem Bajbouji"></td>
+                </tr>
+                <tr>
+                    <td><label for="choix"> Sélectionner un siege (optionnel)</label></td>
+                </tr>
+                <tr>
+                    <td><select name="seatNumber" id="choix">
+                        <option value="Seat1">seat 1</option>
+                        <option value="Seat2">seat 2</option>
+                        <option value="Seat3">seat 3</option>
+                        <option value="Seat4">seat 4</option>
+                        <option value="Seat5">seat 5</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                    <td><input type="submit">Réserver</td>
+                </tr>
+            </table>
+
+         </form>
+      </section>
+
+      <section class="bg-yellow-300">
+        <h2>Modifier une réservation</h2>
+        <!-- Formulaire modification -->
+         <form action="tickets.html">
+            <table>
+                <tr>
+                    <td><label for="PassChoix">Sélectionner un Passager<span>*</span></label></td>
+                </tr>
+                <tr>
+                    <td><select name="nomPasseger" id="PassChoix">
+                        <option value="Passager1">Passager 1</option>
+                        <option value="Passager2">Passager 2</option>
+                        <option value="Passager3">Passager 3</option>
+                        <option value="Passager4">Passager 4</option>
+                        <option value="Passager5">Passager 5</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="NouveauNom">Nouveau Nom (Optionnel)</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="NouveauNom" id="NouveauNom">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="newSeat">Nouveau Siege (Optionnel)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><select name="newSeat" id="newSeat">
+                        <option value="Seat1">seat 1</option>
+                        <option value="Seat2">seat 2</option>
+                        <option value="Seat3">seat 3</option>
+                        <option value="Seat4">seat 4</option>
+                        <option value="Seat5">seat 5</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                    <td><input type="submit">Modifier</td>
+                </tr>
+            </table>
+
+         </form>
+      </section>
+
+      <section class="bg-red-500">
+        <h2>Supprimer une réservation</h2>
+        <!-- Formulaire suppression -->
+          <form action="tickets.html">
+            <table>
+             
+                <tr>
+                    <td><label for="choix"> Sélectionner un Passager *</label></td>
+                </tr>
+                <tr>
+                    <td><select name="seatNumber" id="choix">
+                        <option value="Passager1">Passager 1</option>
+                        <option value="Passager2">Passager 2</option>
+                        <option value="Passager3">Passager 3</option>
+                        <option value="Passager4">Passager 4</option>
+                        <option value="Passager5">Passager 5</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                    <td><input type="submit">Supprimer</td>
+                </tr>
+            </table>
+
+         </form>
+         
+      </section>
+    </aside>
+      
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-black">
+    <p>© 2026 BusDirect - Gestion des réservations</p>
+  </footer>
+
+
+</body>
 </body>
 </html>
