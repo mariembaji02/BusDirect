@@ -12,29 +12,28 @@
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body> 
-    <body>
-
+ 
   <!-- En-tête du site -->
-  <header class=" ">
-    <h1 class=""><i class="fa-solid fa-bus-side"></i>Bus<span>Direct</span></h1>
+  <header class=" flex justify-between shadow-teal-100/50 shadow-xl">
+    <div class="bg-white w-1/3 m-5 flex text-3xl"><img src="images/icon2.svg" class="logo ml-4"><h1 class="mt-2">Bus<span class="text-[rgb(89,198,185)]">Direct</span></h1></div>
     <!-- Navigation -->
-     <nav class="">
+     <nav class=" w-1/2 text-lg">
         
-        <ul class="menu ">
-            <li>Reservation</li>
-            <li>Tickets</li>
-            <li><i class="fa-solid fa-circle-user" ></i></li>
+        <ul class="menu flex h-full justify-end mr-8 space-x-15 items-center">
+            <li class="text-base border-b-3 border-teal-500 rounded-md"><a href="index.html">Reservation</a></li>
+            <li class="text-base"><a href="tickets.html">Tickets</a></li>
+            <li><i class="fa-solid fa-circle-user text-3xl" style="color: rgb(89, 198, 185);"></i></li>
         </ul>
      </nav>
   </header>
 
   <!-- Informations du trajet -->
   <section class="section-Head ">
-    <div class="trajet">
+    <div class="trajet ">
         <h3 class="">trajet</h3>
         <h1 class="">Safi → Marrakech</h1>
     </div>
-    <div class="details-trajet ">
+    <div class="details-trajet  ">
       <p>Date : 25/10/2026</p>
       <p>Départ : 08:00</p>
       <p>Bus : B-1234</p>
@@ -43,12 +42,12 @@
 
   <!-- Contenu principal -->
  
-    <section class="section-Infos" >
+    <section class="section-Infos " >
         <div class="">tatal Places : 20 </div>
         <div class="">Nombre Sieges Disponible</div>
         <div class="">recette totale du trajet</div>
     </section>
-     <main class="">
+     <main class=" ">
     <!-- Plan des sièges -->
     <section class="section-principal ">
       <h2 class="">Plan de la cabine</h2>
@@ -80,8 +79,8 @@
     </section>
 
     <!-- Gestion des réservations -->
-    <aside class="bg-gray-500 m-2  p-2 rounded-lg  h-full">
-      <section class="bg-green-700">
+    <aside class="">
+      <section class="">
         <h2>Réserver une place</h2>
         <!-- Formulaire réservation -->
          <form action="tickets.html">
@@ -113,7 +112,7 @@
          </form>
       </section>
 
-      <section class="bg-yellow-300">
+      <section class="">
         <h2>Modifier une réservation</h2>
         <!-- Formulaire modification -->
          <form action="tickets.html">
@@ -161,7 +160,7 @@
          </form>
       </section>
 
-      <section class="bg-red-500">
+      <section class="">
         <h2>Supprimer une réservation</h2>
         <!-- Formulaire suppression -->
           <form action="tickets.html">
