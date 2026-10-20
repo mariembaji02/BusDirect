@@ -14,13 +14,13 @@
 <body> 
  
   <!-- En-tête du site -->
-  <header class=" flex justify-between shadow-teal-100/50 shadow-xl">
+  <header class=" flex justify-between shadow-teal-100 shadow-xl">
     <div class="bg-white w-1/3 m-5 flex text-3xl"><img src="images/icon2.svg" class="logo ml-4"><h1 class="mt-2">Bus<span class="text-[rgb(89,198,185)]">Direct</span></h1></div>
     <!-- Navigation -->
      <nav class=" w-1/2 text-lg">
         
         <ul class="menu flex h-full justify-end mr-8 space-x-15 items-center">
-            <li class="text-base border-b-3 border-teal-500 rounded-md"><a href="index.html">Reservation</a></li>
+            <li class="text-base border-b-4 border-yellow-500/80 rounded-md"><a href="index.html">Reservation</a></li>
             <li class="text-base"><a href="tickets.html">Tickets</a></li>
             <li><i class="fa-solid fa-circle-user text-3xl" style="color: rgb(89, 198, 185);"></i></li>
         </ul>
@@ -28,31 +28,31 @@
   </header>
 
   <!-- Informations du trajet -->
-  <section class="section-Head ">
-    <div class="trajet ">
-        <h3 class="">trajet</h3>
-        <h1 class="">Safi → Marrakech</h1>
+  <section class="section-Head flex justify-between p-4  mx-4 bg-teal-200/40 ">
+    <div class="trajet m-2">
+        <h3 class="text-sm mb-2">trajet</h3>
+        <h1 class="text-xl font-bold">Safi → Marrakech</h1>
     </div>
-    <div class="details-trajet  ">
-      <p>Date : 25/10/2026</p>
-      <p>Départ : 08:00</p>
-      <p>Bus : B-1234</p>
+    <div class="details-trajet text-base ">
+      <p><i class="fa-solid fa-calendar-days mr-2" style="color: rgba(218, 195, 76, 0.911);"></i><span class="font-semibold">Date :</span> 25/10/2026</p>
+      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(218, 195, 76, 0.911);"></i><span class="font-semibold">Départ :</span> 08:00</p>
+      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(218, 195, 76, 0.911);"></i><span class="font-semibold">Bus :</span> B-1234</p>
     </div>
   </section>
 
   <!-- Contenu principal -->
  
-    <section class="section-Infos " >
-        <div class="">tatal Places : 20 </div>
-        <div class="">Nombre Sieges Disponible</div>
-        <div class="">recette totale du trajet</div>
+    <section class="section-Infos flex justify-around h-20 m-4" >
+        <div class="border w-1/5 flex justify-center items-center rounded-r-2xl">tatal Places : 20 </div>
+        <div class="border w-1/5 flex justify-center items-center rounded-2xl">Nombre Sieges Disponible</div>
+        <div class="border w-1/5 flex justify-center items-center rounded-l-2xl">recette totale du trajet</div>
     </section>
-     <main class=" ">
+     <main class=" grid  grid-cols-2 h-[70%]">
     <!-- Plan des sièges -->
-    <section class="section-principal ">
-      <h2 class="">Plan de la cabine</h2>
+    <section class="section-principal border rounded-lg h-[100%] m-2">
+      <h2 class="ml-4  bg-blue-400 w-[96%] h-8 text-lg border-b">Plan de la cabine</h2>
       <!-- Les 20 sièges -->
-       <div class="countainer-Box ">
+       <div class="countainer-Box p-3 grid grid-cols-4 gap-3">
         <div class="box1">Seat 1</div>
         <div class="box1">Seat 2</div>
         <div class="box1">Seat 3</div>
@@ -79,8 +79,8 @@
     </section>
 
     <!-- Gestion des réservations -->
-    <aside class="">
-      <section class="">
+    <aside class="bg-gray-500 m-2  p-2 rounded-lg h-[100%]">
+      <section class="bg-green-700">
         <h2>Réserver une place</h2>
         <!-- Formulaire réservation -->
          <form action="tickets.html">
@@ -112,7 +112,7 @@
          </form>
       </section>
 
-      <section class="">
+      <section class="bg-yellow-300">
         <h2>Modifier une réservation</h2>
         <!-- Formulaire modification -->
          <form action="tickets.html">
@@ -160,7 +160,7 @@
          </form>
       </section>
 
-      <section class="">
+      <section class="bg-red-500">
         <h2>Supprimer une réservation</h2>
         <!-- Formulaire suppression -->
           <form action="tickets.html">
