@@ -31,48 +31,109 @@
   <section class="section-Head flex justify-between p-4  mx-4 bg-teal-200/40 ">
     <div class="trajet m-2">
         <h3 class="text-sm mb-2">trajet</h3>
-        <h1 class="text-xl font-bold">Safi → Marrakech</h1>
+        <h1 class="text-xl font-bold" style="color: rgba(171, 148, 33, 0.911);">Safi → Marrakech</h1>
     </div>
     <div class="details-trajet text-base ">
-      <p><i class="fa-solid fa-calendar-days mr-2" style="color: rgba(218, 195, 76, 0.911);"></i><span class="font-semibold">Date :</span> 25/10/2026</p>
-      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(218, 195, 76, 0.911);"></i><span class="font-semibold">Départ :</span> 08:00</p>
-      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(218, 195, 76, 0.911);"></i><span class="font-semibold">Bus :</span> B-1234</p>
+      <p><i class="fa-solid fa-calendar-days mr-2" style="color: rgba(142, 125, 37, 0.911);"></i><span class="font-semibold">Date :</span> 25/10/2026</p>
+      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(142, 125, 37, 0.911);"></i><span class="font-semibold">Départ :</span> 08:00</p>
+      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(142, 125, 37, 0.911);"></i><span class="font-semibold">Bus :</span> B-1234</p>
     </div>
   </section>
 
   <!-- Contenu principal -->
  
-    <section class="section-Infos flex justify-between h-20 mt-4 mx-4" >
-        <div class="shadow-sm w-1/5 flex justify-center items-center rounded-r-2xl flex-col"><p class="text-sm font-semibold">tatal Places :</p> <p class="text-gray-400 text-lg ">20 </p> </div>
-        <div class="shadow-sm w-1/5 flex justify-center items-center rounded-2xl h-full flex-col"><p class="text-sm font-semibold">Nombre Sieges Disponible </p><p class="text-green-500 text-lg ">20 places</p></div>
-        <div class="shadow-sm w-1/5 flex justify-center items-center rounded-l-2xl flex-col"><p class="text-sm font-semibold">recette totale du trajet</p> <p class="text-blue-700 text-lg ">0 DH</p></div>
+    <section class="section-Infos flex  h-20 mt-4 mx-4 justify-between " >
+        <div class="shadow-sm  flex justify-center items-center rounded-r-2xl flex-col md:w-1/5"><p class="text-sm font-semibold">tatal Places :</p> <p class="text-gray-400 text-lg ">20 </p> </div>
+        <div class="shadow-sm  flex justify-center items-center rounded-2xl h-full flex-col md:w-1/5"><p class="text-sm font-semibold">Nombre Sieges Disponible </p><p class="text-green-500 text-lg ">20 places</p></div>
+        <div class="shadow-sm  flex justify-center items-center rounded-l-2xl flex-col md:w-1/5"><p class="text-sm font-semibold">recette totale du trajet</p> <p class="text-blue-700 text-lg ">0 DH</p></div>
     </section>
-     <main class=" grid  grid-cols-2 h-[60%] ">
+     <main class=" grid  grid-cols-2    ">
     <!-- Plan des sièges -->
     <section class="section-principal bg-gray-100/50 p-5 rounded-lg h-[80%] m-2  ">
       <h2 class="ml-4 text-center font-medium w-[96%] h-8 text-lg border-b">Plan de la cabine</h2>
       <!-- Les 20 sièges -->
-       <div class="countainer-Box p-3 grid grid-cols-4 gap-3">
-        <div class="box1">Seat 1</div>
-        <div class="box1">Seat 2</div>
-        <div class="box1">Seat 3</div>
-        <div class="box1">Seat 4</div>
-        <div class="box1">Seat 5</div>
-        <div class="box1">Seat 6</div>
-        <div class="box1">Seat 7</div>
-        <div class="box1">Seat 8</div>
-        <div class="box1">Seat 9</div>
-        <div class="box1">Seat 10</div>
-        <div class="box1">Seat 11</div>
-        <div class="box1">Seat 12</div>
-        <div class="box1">Seat 13</div>
-        <div class="box1">Seat 14</div>
-        <div class="box1">Seat 15</div>
-        <div class="box1">Seat 16</div>
-        <div class="box1">Seat 17</div>
-        <div class="box1">Seat 18</div>
-        <div class="box1">Seat 19</div>
-        <div class="box1">Seat 20</div>
+       <div class="countainer-Box p-3 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="box reserver">
+            <p class="nom" ></p>
+            <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7"> 1</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"> <img src="images/chair.svg" alt="chair" class="w-7">2</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">3</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">4</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">5</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">6</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">7</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">8</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">9</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">10</p>
+        </div>
+        <div class="box reserver">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">11</p>
+        </div>
+        <div class="box">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">12</p>
+        </div>
+        <div class="box">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">13</p>
+        </div>
+        <div class="box">
+               <p class="nom"></p>
+               <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">14</p>
+        </div>
+        <div class="box">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">15</p>
+        </div>
+        <div class="box">
+                 <p class="nom"></p>
+                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">16</p>
+        </div>
+        <div class="box">
+                 <p class="nom"></p>
+                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">17</p>
+        </div>
+        <div class="box">
+                  <p class="nom"></p>
+                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">18</p>
+        </div>
+        <div class="box">
+                  <p class="nom"></p>
+                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">19</p>
+        </div>
+        <div class="box">
+                  <p class="nom"></p>
+                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">20</p>
+        </div>
+        
      
        </div>
 
@@ -94,35 +155,56 @@
    
      <!-- Formulaire réservation -->
         
-         <form action="tickets.html" class="space-y-3 p-3">
+         <form action="tickets.html" class="Ajouter-form space-y-3 p-3">
             <table class="space-y-1 w-full">
                 <tr>
                     <td><label for="nom" class=" text-xs font-semibold text-slate-700">Nom Passager<span class="text-red-500">*</span></label></td>
                 </tr>
                 <tr>
-                    <td class="text-center"><input type="text" name="nomComplet" id="nomComplet" placeholder="Ex:Mariem Bajbouji" class="w-[90%] rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"></td>
+                    <td class="text-center"><input type="text" name="nomComplet" id="nomComplet" placeholder="Ex:Mariem Bajbouji" class="nomPasseger w-[90%] rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"></td>
                 </tr>
                 <tr>
                     <td><label for="choix" class="text-xs font-semibold text-slate-700">   Sélectionner un siège <span class="font-normal text-slate-400">(optionnel)</label></td>
                 </tr>
                 <tr>
                     <td class="text-center">
-                        <select name="seatNumber" id="choix" class="w-[90%] text-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-600 outline-none focus:border-emerald-500">
-                         <option value="chose">Choisir un siège</option>
-                        <option value="Seat1">seat 1</option>
-                        <option value="Seat2">seat 2</option>
-                        <option value="Seat3">seat 3</option>
-                        <option value="Seat4">seat 4</option>
-                        <option value="Seat5">seat 5</option>
+                        <select name="seatNumber" id="choix"  class="Siege w-[90%] text-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-600 outline-none focus:border-emerald-500">
+                        <option value="chose">Choisir un siège</option>
+                        <option value="1">seat 1</option>
+                        <option value="2">seat 2</option>
+                        <option value="3">seat 3</option>
+                        <option value="4">seat 4</option>
+                        <option value="5">seat 5</option>
+                        <option value="6">seat 6</option>
+                        <option value="7">seat 7</option>
+                        <option value="8">seat 8</option>
+                        <option value="9">seat 9</option>
+                        <option value="10">seat 10</option>
+                        <option value="11">seat 11</option>
+                        <option value="12">seat 12</option>
+                        <option value="13">seat 13</option>
+                        <option value="14">seat 14</option>
+                        <option value="15">seat 15</option>
+                        <option value="16">seat 16</option>
+                        <option value="17">seat 17</option>
+                        <option value="18">seat 18</option>
+                        <option value="19">seat 19</option>
+                        <option value="20">seat 20</option>
                     </select>
                 </class=>
                 </tr>
                 <tr>
-                    <td class="text-center">
-                              <button class=" w-[90%] my-5  rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-600">  
+                    <td class="w-full flex justify-center ">
+                        <p class="message   border-1 w-[90%] text-center p-1 rounded-xl mt-2 hidden" ></p>
+                    </td>
+                </tr>
+                <tr >
+                       <td class="text-center">
+                              <button class=" w-[90%] my-5  rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-600" type="submit" onclick="Ajouter()">  
                                <i class="fa-solid fa-chair"></i>&nbsp; Reserver </button>
                         </td>
                 </tr>
+                
             </table>
 
          </form>
@@ -148,7 +230,7 @@
                 </tr>
                 <tr>
                     <td class="text-center">
-                        <select name="nomPasseger" id="PassChoix" class="w-[90%] text-center text-slate-600  rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500">
+                        <select name="nomPasseger" id="NomModifier" class="w-[90%] text-center text-slate-600  rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500">
                         <option value="Passager1">Passager 1</option>
                         <option value="Passager2">Passager 2</option>
                         <option value="Passager3">Passager 3</option>
@@ -240,7 +322,7 @@
     <p class="text-white ">© 2026 BusDirect - Gestion des réservations</p>
   </footer>
 
-
+  <script src="script.js"> </script>
 
 </body>
 </html>

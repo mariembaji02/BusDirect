@@ -11,19 +11,54 @@
       background-color: rgb(171, 228, 228);
       border-radius: 10px;
       padding: 10px;
-      height: 6rem;
-      display: flex;
-      justify-content: center;
+      height: 7rem;
       align-items: end;
       color: rgb(58, 64, 70);
-     
+      
+}
+.box p
+{
+   border: 1px solid rgb(121, 119, 119);
+   text-align: center;
+   border-radius: 5px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size:medium;
+   padding: 4px;
+   font-weight: bold;
+}
+.box p.nom
+{
+  height: 60%;
+  background-color: rgba(225, 241, 239, 0.747);
+  margin-bottom: 3px;
+}
+.box p.siege
+{
+  
+  background-color: rgba(225, 241, 239, 0.747);
+  display: flex;
+  justify-content: space-evenly;
+  
+  color: rgb(172, 146, 20);
+  font-size: 20px;
 }
 .logo
 {
       width: 50px;
 }
+.valid{ color: green; border-color: green;background-color: rgba(65, 196, 65, 0.078);}
+.error{ color: red; border-color: red;background-color: rgba(222, 47, 47, 0.185);display: block;}
+.reserver{background-color: rgba(231, 42, 42, 0.906);display: block;}
 
 /* tabellete */
 
 
 /* Mobile */
+@media (max-width:640px)
+{
+      /* .countainer-Box>div
+      {
+
+      } */
+    
+}
