@@ -21,7 +21,7 @@
         
         <ul class="menu flex h-full justify-end mr-8 space-x-15 items-center">
             <li class="text-base border-b-4 border-yellow-500/80 rounded-md"><a href="index.html">Reservation</a></li>
-            <li class="text-base"><a href="tickets.html">Tickets</a></li>
+            <li class="text-base"><a href="tickets.html">Tickets</a><span>0</span></li>
             <li><i class="fa-solid fa-circle-user text-3xl" style="color: rgb(89, 198, 185);"></i></li>
         </ul>
      </nav>
@@ -44,8 +44,8 @@
  
     <section class="section-Infos flex  h-20 mt-4 mx-4 justify-between " >
         <div class="shadow-sm  flex justify-center items-center rounded-r-2xl flex-col md:w-1/5"><p class="text-sm font-semibold">tatal Places :</p> <p class="text-gray-400 text-lg ">20 </p> </div>
-        <div class="shadow-sm  flex justify-center items-center rounded-2xl h-full flex-col md:w-1/5"><p class="text-sm font-semibold">Nombre Sieges Disponible </p><p class="text-green-500 text-lg ">20 places</p></div>
-        <div class="shadow-sm  flex justify-center items-center rounded-l-2xl flex-col md:w-1/5"><p class="text-sm font-semibold">recette totale du trajet</p> <p class="text-blue-700 text-lg ">0 DH</p></div>
+        <div class="shadow-sm  flex justify-center items-center rounded-2xl h-full flex-col md:w-1/5"><p class="text-sm font-semibold">Nombre Sieges Disponible </p><p class="text-green-500 text-lg "><span  id="plcDispo">20</span>&nbsp;places</p></div>
+        <div class="shadow-sm  flex justify-center items-center rounded-l-2xl flex-col md:w-1/5"><p class="text-sm font-semibold">recette totale du trajet</p> <p class="text-blue-700 text-lg "><span  id="chiffreAffaire">0</span> DH</p></div>
     </section>
      <main class=" grid  grid-cols-2    ">
     <!-- Plan des sièges -->
@@ -53,83 +53,83 @@
       <h2 class="ml-4 text-center font-medium w-[96%] h-8 text-lg border-b">Plan de la cabine</h2>
       <!-- Les 20 sièges -->
        <div class="countainer-Box p-3 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div class="box reserver">
-            <p class="nom" ></p>
-            <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7"> 1</p>
+        <div class="box disponible">
+            <p class="nom"></p>
+            <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">1</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"> <img src="images/chair.svg" alt="chair" class="w-7">2</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">3</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">4</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">5</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">6</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">7</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">8</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">9</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">10</p>
         </div>
-        <div class="box reserver">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">11</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">12</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">13</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                <p class="nom"></p>
                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">14</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                 <p class="nom"></p>
                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">15</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                  <p class="nom"></p>
                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">16</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                  <p class="nom"></p>
                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">17</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                   <p class="nom"></p>
                   <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">18</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                   <p class="nom"></p>
                   <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">19</p>
         </div>
-        <div class="box">
+        <div class="box disponible">
                   <p class="nom"></p>
                   <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">20</p>
         </div>
@@ -155,7 +155,7 @@
    
      <!-- Formulaire réservation -->
         
-         <form action="tickets.html" class="Ajouter-form space-y-3 p-3">
+         <form  class="Ajouter-form space-y-3 p-3">
             <table class="space-y-1 w-full">
                 <tr>
                     <td><label for="nom" class=" text-xs font-semibold text-slate-700">Nom Passager<span class="text-red-500">*</span></label></td>
@@ -200,7 +200,7 @@
                 </tr>
                 <tr >
                        <td class="text-center">
-                              <button class=" w-[90%] my-5  rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-600" type="submit" onclick="Ajouter()">  
+                              <button class=" w-[90%] my-5  rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-600" onclick="Ajouter()" >  
                                <i class="fa-solid fa-chair"></i>&nbsp; Reserver </button>
                         </td>
                 </tr>

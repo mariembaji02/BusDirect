@@ -8,13 +8,21 @@
 
 .countainer-Box>div
 {
-      background-color: rgb(171, 228, 228);
+      
       border-radius: 10px;
       padding: 10px;
       height: 7rem;
       align-items: end;
       color: rgb(58, 64, 70);
       
+}
+.countainer-Box>div.disponible
+{
+   background-color: rgb(171, 228, 228);
+}
+.countainer-Box>div.reserver
+{
+  background-color: rgba(221, 56, 56, 0.918);display: block;
 }
 .box p
 {
@@ -48,7 +56,7 @@
 }
 .valid{ color: green; border-color: green;background-color: rgba(65, 196, 65, 0.078);}
 .error{ color: red; border-color: red;background-color: rgba(222, 47, 47, 0.185);display: block;}
-.reserver{background-color: rgba(231, 42, 42, 0.906);display: block;}
+ 
 
 /* tabellete */
 
