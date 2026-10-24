@@ -22,7 +22,7 @@
 }
 .countainer-Box>div.reserver
 {
-  background-color: rgba(221, 56, 56, 0.918);display: block;
+  background-color: rgba(221, 56, 56, 0.918);
 }
 .box p
 {
@@ -55,18 +55,10 @@
       width: 50px;
 }
 .valid{ color: green; border-color: green;background-color: rgba(65, 196, 65, 0.078);}
-.error{ color: red; border-color: red;background-color: rgba(222, 47, 47, 0.185);display: block;}
+.error{ color: red; border-color: red;background-color: rgba(222, 47, 47, 0.185);}
  
 
 /* tabellete */
 
 
 /* Mobile */
-@media (max-width:640px)
-{
-      /* .countainer-Box>div
-      {
-
-      } */
-    
-}
