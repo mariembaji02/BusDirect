@@ -11,6 +11,8 @@ const form = document.querySelector(".Ajouter-form");
 const nomPassager = document.getElementById("NomModifier");
 const NewPassager = document.getElementById("NouveauNom");
 const NewSiege = document.getElementById("newSeat");
+const messageSupprimer=document.querySelector(".messageSupprimer");
+const RemoveForm=document.querySelector(".SupprimerForm");
 const Reservations = [];
 
 
@@ -18,6 +20,7 @@ const Reservations = [];
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   RemplirSelectEdit();
+  RemplirOfremove()
   
 });
 
@@ -81,6 +84,7 @@ function Ajouter() {
                       message.innerHTML =   "Reservation bien Enregistrer";
 
                       Remplir();
+                      
                     }
                   });
                 }
@@ -143,7 +147,9 @@ function Dispo() {
 }
 function Remplir() {
   let Nom_Select = document.getElementById("NomModifier");
+
   Nom_Select.replaceChildren();
+
   let option = document.createElement("option");
   option.value = "chose";
   option.textContent = "choisez un nouveau Passager";
@@ -152,8 +158,8 @@ function Remplir() {
     let option = document.createElement("option");
     option.value = nom.Pesrsonne;
     option.textContent = nom.Pesrsonne;
-
     Nom_Select.append(option);
+   
   });
 }
 function RemplirSelectEdit() {
@@ -179,6 +185,7 @@ function RemplirSelectEdit() {
         formModifier.addEventListener("submit", (e) => {
           e.preventDefault();
           ModifierPassager();
+          RemplirOfremove()
         });
 function ModifierPassager() {
   
@@ -196,13 +203,13 @@ function ModifierPassager() {
                         return ticket.Pesrsonne === nomPassager.value;
                       });
 
-                      if (index === -1) {
-                         messageModifier.classList.remove("valid");
-                         messageModifier.classList.add("error");
-                         messageModifier.innerHTML ="Ce passager n'existe pas" ;
-                         messageModifier.style.display = "block";
-                         return;
-                      }
+                      // if (index === -1) {
+                      //    messageModifier.classList.remove("valid");
+                      //    messageModifier.classList.add("error");
+                      //    messageModifier.innerHTML ="Ce passager n'existe pas" ;
+                      //    messageModifier.style.display = "block";
+                      //    return;
+                      // }
 
                       // 3. Vérifier si les deux champs sont vides
                       if (NewPassager.value.trim() === "" && NewSiege.value === "chose") {
@@ -213,34 +220,17 @@ function ModifierPassager() {
                          return;
                         
                       }
-
-                      // 4. Si on veut changer le siège, vérifier qu'il est libre
-                      if (NewSiege.value !== "chose") {
-
-                        const siegeOccupe = Reservations.some((ticket) => {
-                          return ticket.siegeNum === Number(NewSiege.value);
-                        });
-
-                        if (siegeOccupe) {
-                           messageModifier.classList.remove("valid");
-                           messageModifier.classList.add("error");
-                           messageModifier.innerHTML ="Ce siège est déjà réservé" ;
-                           messageModifier.style.display = "block";
-                          return;
-                        }
-                      }
-
-                      // 5. Modifier le nom si le champ n'est pas vide
+                      // 4. Modifier le nom si le champ n'est pas vide
                       if (NewPassager.value.trim() !== "") {
                         Reservations[index].Pesrsonne = NewPassager.value.trim();
                       }
 
-                      // 6. Modifier le siège si un nouveau siège est choisi
+                      // 5. Modifier le siège si un nouveau siège est choisi
                       if (NewSiege.value !== "chose") {
                         Reservations[index].siegeNum = Number(NewSiege.value);
                       }
 
-                      // 7. Mettre à jour les boxes selon Reservations
+                      // 6. Mettre à jour les boxes selon Reservations
                       Boxes.forEach((box) => {
                         //nombre de siege sur grid
                         const numero = Number(
@@ -264,11 +254,11 @@ function ModifierPassager() {
                         }
                       });
 
-                      // 8. Actualiser les listes
+                      // 7. Actualiser les listes
                       Remplir();
                       RemplirSelectEdit();
 
-                      // 9. Vider les champs après modification
+                      // 8. Vider les champs après modification
                       NewPassager.value = "";
                       NewSiege.value = "chose";
                       messageModifier.classList.remove("error");
@@ -279,8 +269,65 @@ function ModifierPassager() {
 
                        
 }
-                    
-                  //   get the data from grid
+       
+RemoveForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  
+});
+          
+//fonction de supprimer 
+function RemplirOfremove() {
+  let remove_select = document.querySelector(".RemoveNom");
+
+ remove_select.replaceChildren();
+
+  let option = document.createElement("option");
+  option.value = "chose";
+  option.textContent = "choisez un nouveau Passager";
+   remove_select.append(option);
+  Reservations.forEach((nom) => {
+    let option = document.createElement("option");
+    option.value = nom.Pesrsonne;
+    option.textContent = nom.Pesrsonne;
+    remove_select.append(option);
+   
+  });
+}
+function Supprimer(){
+  //nom choisze pour supprimer 
+   let selectedNom=RemoveForm.querySelector(".RemoveNom").value;
+   console.log("ici pour supprimer")
+   if(selectedNom ==="chose")
+   {
+       messageSupprimer.classList.remove("valid");
+       messageSupprimer.classList.add("error");
+       messageSupprimer.textContent="Voulez-vous choisez un passagez";
+       messageSupprimer.style.display="block";
+
+   }
+   else
+   {
+        let index=Reservations.findIndex(Passager=>{
+        return Passager.Pesrsonne===selectedNom;
+        }  )
+        Reservations.splice(index,1)
+        console.log("supprimer bien")
+        Boxes.forEach(box=>{
+          let nom=box.querySelector(".nom");
+          if(nom.textContent.trim()===selectedNom)
+          {
+               nom.textContent="";
+               box.classList.remove("reserver");
+               box.classList.add("disponible");
+          }
+        })
+        Remplir();
+        RemplirSelectEdit();
+        RemplirOfremove();
+       
+   }
+
+}
          
                  
                              
