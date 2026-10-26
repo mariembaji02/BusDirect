@@ -13,7 +13,11 @@ const NewPassager = document.getElementById("NouveauNom");
 const NewSiege = document.getElementById("newSeat");
 const messageSupprimer=document.querySelector(".messageSupprimer");
 const RemoveForm=document.querySelector(".SupprimerForm");
+const remove_select = document.querySelector(".RemoveNom");
 const Reservations = [];
+
+
+
 
 
 
@@ -38,12 +42,14 @@ function Ajouter() {
                         message.classList.remove("valid");
                         message.classList.add("error");
                         message.innerHTML = "Remplir le nom";
+                        messageDisplay(message)
                       } 
              else if (Trouver(nomPasseger)) {
                         console.log("here");
                         message.classList.remove("valid");
                         message.classList.add("error");
                         message.innerHTML =   "Ce passager deja Existe";
+                        messageDisplay(message)
                       } 
                       
   
@@ -82,7 +88,7 @@ function Ajouter() {
                       message.classList.remove("error");
                       message.classList.add("valid");
                       message.innerHTML =   "Reservation bien Enregistrer";
-
+                       messageDisplay(message)
                       Remplir();
                       
                     }
@@ -122,6 +128,7 @@ function Ajouter() {
                   message.innerHTML ="Reservation bien Enregistrer" ;
                   // console.log("le squope de ajouter ");
                   Remplir();
+                  messageDisplay(message)
                 }
               });
             }
@@ -162,6 +169,13 @@ function Remplir() {
    
   });
 }
+function messageDisplay(message)
+{
+                         message.classList.remove("active")
+                         void message.offsetWidth;
+                         message.classList.add("active");
+    
+}
 function RemplirSelectEdit() {
    const DispoSiege = container.querySelectorAll(".box.disponible");
           
@@ -194,6 +208,7 @@ function ModifierPassager() {
                          messageModifier.classList.remove("valid");
                          messageModifier.classList.add("error");
                          messageModifier.innerHTML ="Choisis un nom de passager" ;
+                          messageDisplay(messageModifier)
                          messageModifier.style.display = "block";
                         return;
                       }
@@ -203,20 +218,14 @@ function ModifierPassager() {
                         return ticket.Pesrsonne === nomPassager.value;
                       });
 
-                      // if (index === -1) {
-                      //    messageModifier.classList.remove("valid");
-                      //    messageModifier.classList.add("error");
-                      //    messageModifier.innerHTML ="Ce passager n'existe pas" ;
-                      //    messageModifier.style.display = "block";
-                      //    return;
-                      // }
-
+                  
                       // 3. Vérifier si les deux champs sont vides
                       if (NewPassager.value.trim() === "" && NewSiege.value === "chose") {
                          messageModifier.classList.remove("valid");
                          messageModifier.classList.add("error");
                          messageModifier.innerHTML ="Les deux champs sont vides" ;
                          messageModifier.style.display = "block";
+                         messageDisplay(messageModifier)
                          return;
                         
                       }
@@ -265,6 +274,7 @@ function ModifierPassager() {
                       messageModifier.classList.add("valid");
                       messageModifier.innerHTML ="Modification réussie" ;
                       messageModifier.style.display = "block";
+                      messageDisplay(messageModifier)
                       console.log("table de reservation", Reservations);
 
                        
@@ -277,7 +287,7 @@ RemoveForm.addEventListener("submit", function (e) {
           
 //fonction de supprimer 
 function RemplirOfremove() {
-  let remove_select = document.querySelector(".RemoveNom");
+  
 
  remove_select.replaceChildren();
 
@@ -303,6 +313,7 @@ function Supprimer(){
        messageSupprimer.classList.add("error");
        messageSupprimer.textContent="Voulez-vous choisez un passagez";
        messageSupprimer.style.display="block";
+       messageDisplay(messageModifier)
 
    }
    else
@@ -321,6 +332,11 @@ function Supprimer(){
                box.classList.add("disponible");
           }
         })
+       messageSupprimer.classList.remove("error");
+       messageSupprimer.classList.add("valid");
+       messageSupprimer.textContent="Le passager bien supprimer ";
+       messageSupprimer.style.display="block";
+       messageDisplay(messageSupprimer)
         Remplir();
         RemplirSelectEdit();
         RemplirOfremove();
@@ -330,7 +346,28 @@ function Supprimer(){
 }
          
                  
-                             
+   //afficher les information d'un boxes a partir le click sur le box 
+
+container.addEventListener("click",e=>{
+  // console.log("not found")
+      let siege=e.target.closest(".box");
+       let Nom =siege.querySelector(".nom").textContent
+       let siegeNbr =siege.querySelector(".siege").textContent.trim()
+       if(Nom!=="" && siegeNbr!=="")
+       {
+          
+          nom.value=Nom //select dyal modifier  Nom
+          remove_select.value=Nom//select Supprimer
+       }
+       else
+       {
+        Remplir();
+        RemplirOfremove();
+       }
+     
+})
+
+                          
                           
                               
                   

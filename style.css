@@ -56,7 +56,33 @@
 }
 .valid{ color: green; border-color: green;background-color: rgba(65, 196, 65, 0.078);}
 .error{ color: red; border-color: red;background-color: rgba(222, 47, 47, 0.185);}
- 
+
+ /* border-1 w-[90%] text-center p-1 rounded-xl  */
+.active
+        {
+             animation: opacity 3s forwards ;
+            
+             
+        }
+        @keyframes opacity {
+            from
+            {
+                   opacity: 1;
+                   visibility: visible;
+                  
+
+            }
+            to
+            {
+                opacity: 0;
+                visibility: hidden;
+                margin: 0;
+                padding: 0;
+                border: none;
+              max-height: 0;
+            }
+        }
+      
 
 /* tabellete */
 
