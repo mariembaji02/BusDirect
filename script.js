@@ -413,6 +413,96 @@ container.addEventListener("click",e=>{
                       RemplirSelectEdit();
                       RemplirOfremove();             
      
-    
-  
+
+/* DRAG & DROP */
+let drag = null;
+
+Boxes.forEach(box => {
+
+    box.addEventListener("dragstart", () => {
+        // ما نجرّوش siège فارغ
+        const nomBox = box.querySelector(".nom").textContent.trim();
+
+        if (nomBox === "") {
+            drag = null;
+            return;
+        }
+
+        drag = box;
+        box.style.opacity = "0.5";
+    });
+
+    box.addEventListener("dragend", () => {
+        box.style.opacity = "1";
+        drag = null;
+    });
+
+    box.addEventListener("dragover", e => {
+        e.preventDefault();
+        box.style.backgroundColor = "rgba(89, 198, 185, 0.3)";
+    });
+
+    box.addEventListener("dragleave", () => {
+        box.style.backgroundColor = "";
+    });
+
+    box.addEventListener("drop", e => {
+        e.preventDefault();
+
+        if (!drag || drag === box) return;
+
+        const nomDepart = drag.querySelector(".nom").textContent.trim();
+        const siegeDepart = Number(
+            drag.querySelector(".siege").textContent.trim()
+        );
+
+        const siegeArrivee = Number(
+            box.querySelector(".siege").textContent.trim()
+        );
+
+        // On déplace uniquement vers un siège libre
+        if (!box.classList.contains("disponible")) {
+            box.style.backgroundColor = "";
+            return;
+        }
+
+        // Trouver la réservation du passager
+        const reservation = Reservations.find(ticket =>
+            ticket.siegeNum === siegeDepart
+        );
+
+        if (!reservation) {
+            box.style.backgroundColor = "";
+            return;
+        }
+
+        // Modifier le numéro du siège dans la réservation
+        reservation.siegeNum = siegeArrivee;
+
+        // Sauvegarder les données
+        saveArray();
+
+        // Mettre à jour les noms et les couleurs
+        Boxes.forEach(s => {
+            const numero = Number(
+                s.querySelector(".siege").textContent.trim()
+            );
+
+            const nom = s.querySelector(".nom");
+            const ticket = Reservations.find(r => r.siegeNum === numero);
+
+            nom.textContent = ticket ? ticket.Pesrsonne : "";
+
+            s.classList.toggle("reserver", Boolean(ticket));
+            s.classList.toggle("disponible", !ticket);
+            s.style.backgroundColor = "";
+        });
+
+        // Actualiser les listes des formulaires
+        Remplir();
+        RemplirSelectEdit();
+        RemplirOfremove();
+    });
+});
+
 
