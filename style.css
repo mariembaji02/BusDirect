@@ -60,7 +60,7 @@
  /* border-1 w-[90%] text-center p-1 rounded-xl  */
 .active
         {
-             animation: opacity 3s forwards ;
+             animation: opacity 1s forwards 3s;
             
              
         }
@@ -79,7 +79,7 @@
                 margin: 0;
                 padding: 0;
                 border: none;
-              max-height: 0;
+                max-height: 0;
             }
         }
       

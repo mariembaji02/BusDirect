@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BusDirect</title>
     <!-- link of style sheet  -->
     <link rel="stylesheet" href="style.css">
     <!-- link of tailwind css -->
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
       <!-- font awsome link -->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+       <link rel="shortcut icon" href="images/icon2.svg" type="image/x-icon">
+       
 </head>
 <body class="h-full"> 
  
@@ -193,16 +195,17 @@
                     </select>
                 </class=>
                 </tr>
-                <tr>
-                    <td class="w-full flex justify-center ">
-                        <p class="message   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden" ></p>
-                    </td>
-                </tr>
+             
                 <tr >
                        <td class="text-center">
                               <button class=" w-[90%] my-5  rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-600" onclick="Ajouter()" >  
                                <i class="fa-solid fa-chair"></i>&nbsp; Reserver </button>
                         </td>
+                </tr>
+                   <tr>
+                    <td class="w-full flex justify-center ">
+                        <p class="message   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden" ></p>
+                    </td>
                 </tr>
                 
             </table>
@@ -254,17 +257,18 @@
                     </select>
                 </td>
                 </tr>
-               <tr>
-                    <td class="w-full flex justify-center ">
-                        <p class="messageModifier   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden  " ></p>
-                    </td>
-                </tr>
+             
                 <tr>
                     <td class="text-center">
                         <button class=" w-[90%] items-center justify-center gap-2 rounded-lg mt-4 bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-600" type="submit">  
                               <i class="fa-solid fa-pen"></i>&nbsp; Modifier </button>
                         
                      </td>
+                </tr>
+                  <tr>
+                    <td class="w-full flex justify-center ">
+                        <p class="messageModifier   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden  " ></p>
+                    </td>
                 </tr>
             </table>
 
@@ -297,13 +301,17 @@
                     </select>
                 </td>
                 </tr>
-                 <td class="w-full flex justify-center ">
-                        <p class="messageSupprimer   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden" ></p>
-                    </td>
+              
+                
                 <tr>
                     <td class="text-center">  <button class=" w-[90%] items-center justify-center gap-2 rounded-lg mt-4 bg-red-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-red-600" onclick="Supprimer()">  
                               <i class="fa-solid fa-trash"></i>&nbsp; Supprimer </button>
                         </td>
+                </tr>
+                  <tr>
+                     <td class="w-full flex justify-center ">
+                        <p class="messageSupprimer   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden" ></p>
+                    </td>
                 </tr>
             </table>
 

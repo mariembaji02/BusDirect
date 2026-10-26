@@ -15,7 +15,15 @@ const messageSupprimer=document.querySelector(".messageSupprimer");
 const RemoveForm=document.querySelector(".SupprimerForm");
 const remove_select = document.querySelector(".RemoveNom");
 const Reservations = [];
-
+function saveArray()
+{
+  localStorage.setItem("reservations",JSON.stringify(Reservations));
+}
+function getArray()
+{
+  let data= JSON.parse(localStorage.getItem("reservations") || "[]")
+   Reservations.push(...data)
+}
 
 
 
@@ -74,6 +82,7 @@ function Ajouter() {
                         siegeNum: Number(dispoPlace),
                         Pesrsonne: nomPasseger,
                       });
+                      saveArray()
                       let placesReserver = Reservations.length;
                       placeDisponible.innerHTML = 20 - placesReserver;
                       chiffreAffaire += 80;
@@ -111,6 +120,7 @@ function Ajouter() {
                     siegeNum: Number(siegeAjouter),
                     Pesrsonne: nomPasseger,
                   });
+                  saveArray()
                   let placesReserver = Reservations.length;
                   placeDisponible.innerHTML = 20 - placesReserver;
                   chiffreAffaire += 80;
@@ -232,6 +242,7 @@ function ModifierPassager() {
                       // 4. Modifier le nom si le champ n'est pas vide
                       if (NewPassager.value.trim() !== "") {
                         Reservations[index].Pesrsonne = NewPassager.value.trim();
+                    
                       }
 
                       // 5. Modifier le siège si un nouveau siège est choisi
@@ -265,8 +276,8 @@ function ModifierPassager() {
 
                       // 7. Actualiser les listes
                       Remplir();
+                      saveArray()
                       RemplirSelectEdit();
-
                       // 8. Vider les champs après modification
                       NewPassager.value = "";
                       NewSiege.value = "chose";
@@ -313,7 +324,7 @@ function Supprimer(){
        messageSupprimer.classList.add("error");
        messageSupprimer.textContent="Voulez-vous choisez un passagez";
        messageSupprimer.style.display="block";
-       messageDisplay(messageModifier)
+       messageDisplay(messageSupprimer)
 
    }
    else
@@ -338,6 +349,7 @@ function Supprimer(){
        messageSupprimer.style.display="block";
        messageDisplay(messageSupprimer)
         Remplir();
+        saveArray()
         RemplirSelectEdit();
         RemplirOfremove();
        
@@ -351,6 +363,7 @@ function Supprimer(){
 container.addEventListener("click",e=>{
   // console.log("not found")
       let siege=e.target.closest(".box");
+      if (!siege) return;
        let Nom =siege.querySelector(".nom").textContent
        let siegeNbr =siege.querySelector(".siege").textContent.trim()
        if(Nom!=="" && siegeNbr!=="")
@@ -370,9 +383,35 @@ container.addEventListener("click",e=>{
                           
                           
                               
-                  
+  getArray()                
                             
-               
+  Boxes.forEach((box) => {
+                      
+                        const numero = Number(
+                          box.querySelector(".siege").textContent.trim()
+                        );
+                     
+                        const nomBox = box.querySelector(".nom");
+
+                        const reservation = Reservations.find((ticket) => {
+                          return ticket.siegeNum === numero;
+                        });
+
+                        if (reservation) {
+                          nomBox.textContent = reservation.Pesrsonne;
+                          box.classList.remove("disponible");
+                          box.classList.add("reserver");
+                        } else {
+                          nomBox.textContent = "";
+                          box.classList.remove("reserver");
+                          box.classList.add("disponible");
+                        }
+                      });
+
+                     
+                      Remplir();
+                      RemplirSelectEdit();
+                      RemplirOfremove();             
      
     
   
