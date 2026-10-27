@@ -83,3 +83,32 @@
             }
         }
       
+.table_tickets
+{
+ 
+  height: 80%;
+  margin: auto;
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+.table_tickets td
+{
+  /* border: 1px solid; */
+  border-collapse: 3px;
+  padding: 4px;
+}
+.table_tickets .name
+{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* font-weight: 600; */
+}
+.table_tickets .value
+{
+  /* background-color: red; */
+  text-align: center;
+  font-size: 16x;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
