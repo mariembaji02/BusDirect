@@ -328,6 +328,7 @@ function ModifierPassager() {
 RemoveForm.addEventListener("submit", function (e) {
   e.preventDefault();
   affichageDetails()
+  RemplirOfremove()
 });
           
 //fonction de supprimer 
