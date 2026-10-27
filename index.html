@@ -13,15 +13,15 @@
        <link rel="shortcut icon" href="images/icon2.svg" type="image/x-icon">
        
 </head>
-<body class="h-full"> 
+<body class="h-full "> 
  
   <!-- En-tête du site -->
-  <header class=" flex justify-between shadow-teal-100 shadow-xl">
-    <div class="bg-white w-1/3 m-5 flex text-3xl"><img src="images/icon2.svg" class="logo ml-4"><h1 class="mt-2">Bus<span class="text-[rgb(89,198,185)]">Direct</span></h1></div>
+  <header class=" flex flex-col justify-between shadow-teal-100 shadow-xl  lg:flex-row">
+    <div class="   m-3 flex  justify-center text-3xl  lg:w-1/3 lg:justify-start lg:m-5 "><img src="images/icon2.svg" class="logo ml-4"><h1 class="mt-2">Bus<span class="text-[rgb(89,198,185)]">Direct</span></h1></div>
     <!-- Navigation -->
-     <nav class=" w-1/2 text-lg">
+     <nav class="text-lg w-full flex justify-evenly  lg:w-1/2 ">
         
-        <ul class="menu flex h-full justify-end mr-8 space-x-15 items-center">
+        <ul class="menu flex h-full mb-2  space-x-10 items-center  lg:w-[70%] justify-end gap-3" >
             <li class="text-base border-b-4 border-yellow-500/80 rounded-md"><a href="index.html">Reservation</a></li>
             <li class="text-base"><a href="tickets.html">Tickets</a><span>0</span></li>
             <li><i class="fa-solid fa-circle-user text-3xl" style="color: rgb(89, 198, 185);"></i></li>
@@ -30,12 +30,12 @@
   </header>
 
   <!-- Informations du trajet -->
-  <section class="section-Head flex justify-between p-4  mx-4 bg-teal-200/40 ">
-    <div class="trajet m-2">
-        <h3 class="text-sm mb-2">trajet</h3>
-        <h1 class="text-xl font-bold" style="color: rgba(171, 148, 33, 0.911);">Safi → Marrakech</h1>
+  <section class="section-Head flex justify-between p-4  mx-4 bg-teal-200/40  ">
+    <div class="trajet lg:m-2">
+        <h3 class="text-lg mb-2">trajet</h3>
+        <h1 class="text-lg font-bold lg:text-3xl" style="color: rgba(171, 148, 33, 0.911);">Safi → Marrakech</h1>
     </div>
-    <div class="details-trajet text-base ">
+    <div class="details-trajet text-sm lg:text-lg">
       <p><i class="fa-solid fa-calendar-days mr-2" style="color: rgba(142, 125, 37, 0.911);"></i><span class="font-semibold">Date :</span> 25/10/2026</p>
       <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(142, 125, 37, 0.911);"></i><span class="font-semibold">Départ :</span> 08:00</p>
       <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(142, 125, 37, 0.911);"></i><span class="font-semibold">Bus :</span> B-1234</p>
@@ -44,17 +44,17 @@
 
   <!-- Contenu principal -->
  
-    <section class="section-Infos flex  h-20 mt-4 mx-4 justify-between " >
-        <div class="shadow-sm  flex justify-center items-center rounded-r-2xl flex-col md:w-1/5"><p class="text-sm font-semibold">tatal Places :</p> <p class="text-gray-400 text-lg ">20 </p> </div>
-        <div class="shadow-sm  flex justify-center items-center rounded-2xl h-full flex-col md:w-1/5"><p class="text-sm font-semibold">Nombre Sieges Disponible </p><p class="text-green-500 text-lg "><span  id="plcDispo">20</span>&nbsp;places</p></div>
-        <div class="shadow-sm  flex justify-center items-center rounded-l-2xl flex-col md:w-1/5"><p class="text-sm font-semibold">recette totale du trajet</p> <p class="text-blue-700 text-lg "><span  id="chiffreAffaire">0</span> DH</p></div>
+    <section class="section-Infos flex flex-col  h-30 justify-between lg:flex-row mt-4 mx-4 lg:" >
+        <div class="shadow-sm p-3 flex justify-center items-center rounded-r-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">tatal Places :</p> <p class="text-gray-400 text-lg lg:text-2xl">20 </p> </div>
+        <div class="shadow-sm p-3  flex justify-center items-center rounded-2xl h-full flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">Nombre Sieges Disponible </p><p class="text-green-500 text-lg lg:text-2xl"><span  id="plcDispo">20</span>&nbsp;places</p></div>
+        <div class="shadow-sm p-3  flex justify-center items-center rounded-l-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">recette totale du trajet</p> <p class="text-blue-700 text-lg lg:text-2xl"><span  id="chiffreAffaire">0</span> DH</p></div>
     </section>
-     <main class=" grid  grid-cols-2    ">
+     <main class=" grid  grid-cols-1  lg:grid-cols-2 place-items-center lg:w-full ">
     <!-- Plan des sièges -->
-    <section class="section-principal bg-gray-100/50 p-5 rounded-lg h-[80%] m-2  ">
-      <h2 class="ml-4 text-center font-medium w-[96%] h-8 text-lg border-b">Plan de la cabine</h2>
+    <section class="section-principal bg-gray-100/50 p-5 rounded-lg h-[90%] mt-15  w-[90%] place-items-center lg:w-[95%] lg:ml-8 ">
+      <h2 class="ml-4  mb-3 text-center font-medium w-[96%] h-8 text-lg border-b">Plan de la cabine</h2>
       <!-- Les 20 sièges -->
-       <div class="countainer-Box p-3 grid grid-cols-2 md:grid-cols-4 gap-3">
+       <div class="countainer-Box  grid grid-cols-2  lg:grid-cols-4 gap-3  w-[90%] ">
         <div class="box disponible" draggable="true">
             <p class="nom"></p>
             <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">1</p>
@@ -142,7 +142,7 @@
     </section>
 
     <!-- Gestion des réservations -->
-    <aside class="p-2 rounded-lg h-[100%]  ">
+    <aside class="p-2 rounded-lg h-[95%] w-[90%] mt-20 lg:mt-7">
       <section class="w-full overflow-hidden rounded-xl border-2 border-emerald-100 bg-white shadow-sm" >
      <div class="flex  gap-3 border-b border-emerald-100 bg-emerald-50/70 p-3">
       <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xl text-white">
@@ -160,7 +160,7 @@
          <form  class="Ajouter-form space-y-3 p-3">
             <table class="space-y-1 w-full">
                 <tr>
-                    <td><label for="nom" class=" text-xs font-semibold text-slate-700">Nom Passager<span class="text-red-500">*</span></label></td>
+                    <td><label for="nom" class="text-xs font-semibold text-slate-700">Nom Passager<span class="text-red-500">*</span></label></td>
                 </tr>
                 <tr>
                     <td class="text-center"><input type="text" name="nomComplet" id="nomComplet" placeholder="Ex:Mariem Bajbouji" class="nomPasseger w-[90%] rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"></td>
@@ -324,7 +324,7 @@
   </main>
 
   <!-- Pied de page -->
-  <footer class="bg-black text-center h-20 pt-4" >
+  <footer class="bg-black text-center h-20 pt-4 mt-4" >
     <p class="text-white ">© 2026 BusDirect - Gestion des réservations</p>
   </footer>
 
