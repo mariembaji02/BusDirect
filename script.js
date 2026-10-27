@@ -25,14 +25,24 @@ function getArray()
    Reservations.push(...data)
 }
 
+function affichageDetails()
+{
+  let dispo=20-Reservations.length
+  let tarif=80*Reservations.length
+  document.getElementById("chiffreAffaire").textContent=tarif;
+  document.getElementById("plcDispo").textContent=dispo;
+}
 
-
-
+  getArray()  
+  affichageDetails();
+  document.querySelector(".cout-ticket").textContent=Reservations.length
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  RemplirSelectAjouter()
   RemplirSelectEdit();
   RemplirOfremove()
+   affichageDetails()
   
 });
 
@@ -83,11 +93,9 @@ function Ajouter() {
                         Pesrsonne: nomPasseger,
                       });
                       saveArray()
-                      let placesReserver = Reservations.length;
-                      placeDisponible.innerHTML = 20 - placesReserver;
-                      chiffreAffaire += 80;
-                      document.getElementById("chiffreAffaire").innerHTML = chiffreAffaire;
-
+                      document.querySelector(".cout-ticket").textContent=Reservations.length
+                
+                 
                       siege.classList.remove("disponible");
                       siege.classList.add("reserver");
                       option.style.display = "none";
@@ -121,9 +129,15 @@ function Ajouter() {
                     Pesrsonne: nomPasseger,
                   });
                   saveArray()
+                  document.querySelector(".cout-ticket").textContent=Reservations.length
                   let placesReserver = Reservations.length;
-                  placeDisponible.innerHTML = 20 - placesReserver;
+                   places=20 - placesReserver;
+                  placeDisponible.innerHTML = places;
                   chiffreAffaire += 80;
+                  document.getElementById("chiffreAffaire").innerHTML = chiffreAffaire;
+                  //save madification at local
+                  localStorage.setItem("placesDisponibles",  places);
+                  localStorage.setItem("montantTotal", chiffreAffaire);
                   document.getElementById("chiffreAffaire").innerHTML = chiffreAffaire;
                   siege.classList.remove("disponible");
                   siege.classList.add("reserver");
@@ -205,7 +219,26 @@ function RemplirSelectEdit() {
           });
 
 }
+function RemplirSelectAjouter()
+{
+  const DispoSiege = container.querySelectorAll(".box.disponible");
+          
+          NexSiege.replaceChildren();
 
+          let option = document.createElement("option");
+          option.value = "chose";
+          option.textContent = "choisez un nouveau siege";
+          NexSiege.append(option);
+
+          DispoSiege.forEach((num) => {
+            let sigeNum = num.querySelector(".siege").textContent.trim();
+            let option = document.createElement("option");
+            option.value = sigeNum;
+            option.textContent = sigeNum;
+            NexSiege.append(option);
+          });
+
+}
         formModifier.addEventListener("submit", (e) => {
           e.preventDefault();
           ModifierPassager();
@@ -218,7 +251,7 @@ function ModifierPassager() {
                          messageModifier.classList.remove("valid");
                          messageModifier.classList.add("error");
                          messageModifier.innerHTML ="Choisis un nom de passager" ;
-                          messageDisplay(messageModifier)
+                         messageDisplay(messageModifier)
                          messageModifier.style.display = "block";
                         return;
                       }
@@ -278,6 +311,7 @@ function ModifierPassager() {
                       Remplir();
                       saveArray()
                       RemplirSelectEdit();
+                      RemplirSelectAjouter()
                       // 8. Vider les champs après modification
                       NewPassager.value = "";
                       NewSiege.value = "chose";
@@ -293,7 +327,7 @@ function ModifierPassager() {
        
 RemoveForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  
+  affichageDetails()
 });
           
 //fonction de supprimer 
@@ -333,7 +367,9 @@ function Supprimer(){
         return Passager.Pesrsonne===selectedNom;
         }  )
         Reservations.splice(index,1)
-        console.log("supprimer bien")
+        saveArray()
+        document.querySelector(".cout-ticket").textContent=Reservations.length
+        
         Boxes.forEach(box=>{
           let nom=box.querySelector(".nom");
           if(nom.textContent.trim()===selectedNom)
@@ -346,10 +382,14 @@ function Supprimer(){
        messageSupprimer.classList.remove("error");
        messageSupprimer.classList.add("valid");
        messageSupprimer.textContent="Le passager bien supprimer ";
-       messageSupprimer.style.display="block";
+       messageSupprimer.style.display="block";  //save madification at local
+       localStorage.setItem("placesDisponibles",  places);
+       localStorage.setItem("montantTotal", chiffreAffaire);
+       
        messageDisplay(messageSupprimer)
         Remplir();
         saveArray()
+        RemplirSelectAjouter()
         RemplirSelectEdit();
         RemplirOfremove();
        
@@ -383,8 +423,8 @@ container.addEventListener("click",e=>{
                           
                           
                               
-  getArray()                
-                            
+              
+                      
   Boxes.forEach((box) => {
                       
                         const numero = Number(
@@ -411,6 +451,7 @@ container.addEventListener("click",e=>{
                      
                       Remplir();
                       RemplirSelectEdit();
+                      RemplirSelectAjouter()
                       RemplirOfremove();             
      
 
@@ -420,8 +461,7 @@ let drag = null;
 Boxes.forEach(box => {
 
     box.addEventListener("dragstart", () => {
-        // ما نجرّوش siège فارغ
-        const nomBox = box.querySelector(".nom").textContent.trim();
+       const nomBox = box.querySelector(".nom").textContent.trim();
 
         if (nomBox === "") {
             drag = null;
@@ -451,7 +491,7 @@ Boxes.forEach(box => {
 
         if (!drag || drag === box) return;
 
-        const nomDepart = drag.querySelector(".nom").textContent.trim();
+        // const nomDepart = drag.querySelector(".nom").textContent.trim();
         const siegeDepart = Number(
             drag.querySelector(".siege").textContent.trim()
         );
@@ -501,6 +541,7 @@ Boxes.forEach(box => {
         // Actualiser les listes des formulaires
         Remplir();
         RemplirSelectEdit();
+        RemplirSelectAjouter()
         RemplirOfremove();
     });
 });
