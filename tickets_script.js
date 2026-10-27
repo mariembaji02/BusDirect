@@ -1,5 +1,6 @@
 const container=document.querySelector(".countainer_Tickets");
 const Reservations=[]
+const inp=document.querySelector(".search");
 //remplir reservation from lacol storage 
  let data=JSON.parse(localStorage.getItem("reservations")|| "[]")
  Reservations.push(...data)
@@ -22,7 +23,7 @@ const Reservations=[]
                   </tr>
                   <tr>
                     <td class="name">Passager:</td>
-                    <td class="value">${ticket.Pesrsonne}</td>
+                    <td class="value nom">${ticket.Pesrsonne}</td>
                   </tr>
                   <tr>
                     <td class="name">Siege:</td>
@@ -38,3 +39,15 @@ const Reservations=[]
  }
    
  ).join("");
+
+ let tickets=document.querySelectorAll(".ticket");
+     tickets.forEach(ticket=>{
+      let nom=ticket.querySelector(".nom");
+
+      console.log(nom.textContent)
+      
+     })
+
+
+
+// 
