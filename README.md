@@ -1,7 +1,7 @@
-#BusDirect
+# BusDirect
 c'est une page de gestion d'un seul trajet (safi -> marrakech).
 
-#les fonctionnalites principales 
+# les fonctionnalites principales 
     .Ajouter un Passager
     .modifier un Passager 
     .supprimer un Passager
@@ -11,17 +11,18 @@ c'est une page de gestion d'un seul trajet (safi -> marrakech).
     .compter le nombre des places disponible et le tarif
     .la page responsive pour (Mobile/tablette/Desktop)
 
-##les technologies utiliser:
+## les technologies utiliser:
     -HTML5
     -CSS3
     -tailwind css 
     -javaScript
 
-##les pages
-   -index.html
-   -tickets.html
+## les pages
+   -index.html  [voir page](index.html)
+   -tickets.html [voir page](tickets.html)
 
-#shéma des fichers
+# shéma des fichers
+```text
     BusDirect/
 ├──  index.html
 ├──  tickets.html
@@ -37,5 +38,5 @@ c'est une page de gestion d'un seul trajet (safi -> marrakech).
     └──  seatsDispo.svg
     └──  ticket-icon.svg
 └──  README.md
-    
+```    
     
